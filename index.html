@@ -7,9 +7,19 @@
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+    .test(navigator.userAgent)) {
+
+    console.log("Режим мобильное устройство (телефон или планшет).")
+    window.location = "./mobile/main.html"
+
+} else {
+    console.log("Режим ПК")
+    window.location = './pc/main.html';
+}
+</script>
 <body>
-    <div class="box">
-        <video src="./videos/c5fbe462e7a44dccbef7df4f386d3341.mp4" controls=""></video>
-    </div>
+    <h1>Loading...</h1>
 </body>
 </html>

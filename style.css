@@ -16,8 +16,10 @@
 
 html {
     background-color: #1c1c1c;
-    background-image: url("./Images/bg.jpg"); 
-    background-repeat: repeat;
+    /* background-image: url("./Images/bg.jpg");  */
+    /* background-repeat: repeat; */
+    background: url("./Images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 .box {
@@ -26,7 +28,7 @@ html {
     padding: 20px;
     text-align: center;
     margin: 0px calc(100% / 4) 0px calc(100% / 4);
-    margin-top: calc(100% / 10);
+    margin-top: 100px;
 }
 
 video {
