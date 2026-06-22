@@ -31,6 +31,10 @@ body {
 }
 
 .conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border: 2px groove white;
   border-radius: 10px;
   margin: 20px;

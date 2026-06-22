@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Danil Looking | Command Block</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			transition: 0.3s ease;
+		}
+
+		body {
+			position: fixed;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			background-color: #1c1c1c;
+		}
+
+		.scene {
+		  perspective: 600px;
+		  width: 200px;
+		  height: 200px;
+		  margin: 100px auto;
+		}
+
+		.cube {
+		  position: relative;
+		  width: 100%;
+		  height: 100%;
+		  transform-style: preserve-3d;
+		  animation: rotateCube 8s infinite linear;
+		}
+
+		@keyframes rotateCube {
+		  0% { transform: rotateX(0deg) rotateY(0deg); }
+		  100% { transform: rotateX(360deg) rotateY(360deg); }
+		}
+
+		.cube-face {
+		  position: absolute;
+		  width: 200px;
+		  height: 200px;
+		  background: rgba(255, 255, 255, 0.9);
+		  border: 2px solid #333;
+		  font-size: 18px;
+		  font-family: sans-serif;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  color: #000;
+		}
+
+		.cube-front  { transform: translateZ(100px); }
+		.cube-back   { transform: rotateY(180deg) translateZ(100px); }
+		.cube-right  { transform: rotateY(90deg) translateZ(100px); }
+		.cube-left   { transform: rotateY(-90deg) translateZ(100px); }
+		.cube-top    { transform: rotateX(90deg) translateZ(100px); }
+		.cube-bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+	</style>
+</head>
+<body>
+	<div class="scene">
+	  <div class="cube">
+	    <div class="cube-face cube-front"><img style="width: 100%;" src="../src/media/command_block_back.webp" alt=""></div>
+	    <div class="cube-face cube-back"><img style="width: 100%;" src="../src/media/command_block_back.webp" alt=""></div>
+	    <div class="cube-face cube-right"><img style="width: 100%;" src="../src/media/command_block_back.webp" alt=""></div>
+	    <div class="cube-face cube-left"><img style="width: 100%;" src="../src/media/command_block_back.webp" alt=""></div>
+	    <div class="cube-face cube-top"><img style="width: 100%;" src="../src/media/command_block_back.webp" alt=""></div>
+	    <div class="cube-face cube-bottom"><img style="width: 100%;" src="../src/media/command_block_back.webp" alt=""></div>
+	  </div>
+	</div>
+</body>
+</html>
