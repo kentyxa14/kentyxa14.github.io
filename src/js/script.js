@@ -1,4 +1,66 @@
 
+document.addEventListener("DOMContentLoaded", () => {
+  const contentContainer = document.querySelector('.content');
+  if (!contentContainer) return;
+
+  const dragStyle = document.createElement("style");
+  dragStyle.innerHTML = `
+    .content > .conteiner {
+      cursor: grab;
+      user-select: none;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .content > .conteiner.dragging {
+      opacity: 0.4;
+      transform: scale(0.98);
+      cursor: grabbing;
+    }
+  `;
+  document.head.appendChild(dragStyle);
+
+  const blocks = contentContainer.querySelectorAll('.conteiner');
+  blocks.forEach(block => {
+    block.setAttribute('draggable', 'true');
+  });
+
+  contentContainer.addEventListener('dragstart', (e) => {
+    const targetBlock = e.target.closest('.conteiner');
+    if (targetBlock && targetBlock.parentNode === contentContainer) {
+      targetBlock.classList.add('dragging');
+    }
+  });
+
+  contentContainer.addEventListener('dragend', (e) => {
+    const targetBlock = e.target.closest('.conteiner');
+    if (targetBlock) {
+      targetBlock.classList.remove('dragging');
+    }
+  });
+
+  contentContainer.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    
+    const draggingItem = contentContainer.querySelector('.dragging');
+    if (!draggingItem) return;
+
+    const targetItem = e.target.closest('.content > .conteiner');
+
+    if (targetItem && targetItem !== draggingItem) {
+      const children = Array.from(contentContainer.children);
+      const draggingIndex = children.indexOf(draggingItem);
+      const targetIndex = children.indexOf(targetItem);
+      
+      if (draggingIndex < targetIndex) {
+        targetItem.after(draggingItem);
+      } else {
+        targetItem.before(draggingItem);
+      }
+    }
+  });
+});
+
+
+
 function summonCommandBlock() {
 	const block = document.createElement("div");
 	block.innerHTML = `
