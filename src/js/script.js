@@ -3,12 +3,12 @@ function summonCommandBlock() {
 	const block = document.createElement("div");
 	block.innerHTML = `
 	<div class="cube">
-		<div class="cube-face cube-front"><img style="width: 100%;" src="./src/media/Command_block_back.webp"></div>
-		<div class="cube-face cube-back"><img style="width: 100%;" src="./src/media/Command_block_back.webp"></div>
-		<div class="cube-face cube-right"><img style="width: 100%;" src="./src/media/Command_block_back.webp"></div>
-		<div class="cube-face cube-left"><img style="width: 100%;" src="./src/media/Command_block_back.webp"></div>
-		<div class="cube-face cube-top"><img style="width: 100%;" src="./src/media/Command_block_back.webp"></div>
-		<div class="cube-face cube-bottom"><img style="width: 100%;" src="./src/media/Command_block_back.webp"></div>
+		<div class="cube-face cube-front"><img style="width: 100%;" src="./src/media/command_block_back.webp"></div>
+		<div class="cube-face cube-back"><img style="width: 100%;" src="./src/media/command_block_back.webp"></div>
+		<div class="cube-face cube-right"><img style="width: 100%;" src="./src/media/command_block_back.webp"></div>
+		<div class="cube-face cube-left"><img style="width: 100%;" src="./src/media/command_block_back.webp"></div>
+		<div class="cube-face cube-top"><img style="width: 100%;" src="./src/media/command_block_back.webp"></div>
+		<div class="cube-face cube-bottom"><img style="width: 100%;" src="./src/media/command_block_back.webp"></div>
 	</div>`;
 	block.classList = "scene";
 
